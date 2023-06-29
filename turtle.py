@@ -13,6 +13,7 @@ def main():
     userChoice = 0
     while(userChoice != '7'):
         userChoice = Menu()
+        # python switch case
         match userChoice:
             case '1': penToggle = 1
             case '2': penToggle = 2
