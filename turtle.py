@@ -91,19 +91,23 @@ def PrintGrid(grid):
         print("\n")
 
 def MoveLeft(grid, row, col, amountOfSpaces):
+    #             start         stop       increment
     for j in range(col, col-amountOfSpaces, -1):
         grid[row][j] = 1
 
 def MoveRight(grid, row, col, amountOfSpaces):
+    #             start         stop       increment
     for j in range(col, col + amountOfSpaces, 1):
         grid[row][j] = 1
 
 
 def MoveUp(grid, row, col, amountOfSpaces):
+    #             start         stop       increment
     for i in range(row, row - amountOfSpaces, -1):
         grid[i][col] = 1
 
 def MoveDown(grid, row, col, amountOfSpaces):
+    #             start         stop       increment
     for i in range(row, row + amountOfSpaces, 1):
         grid[i][col] = 1
 
