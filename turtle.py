@@ -1,7 +1,7 @@
 
 
 def main():
-    grid =[[0] * 50 for i in range(50)]
+    grid =[[' '] * 50 for i in range(50)]
     # 3 is right 4 is left
     # 2 is for down and means trail on, 1 for trail off
     # 5 is for saying move forward followed by amount of spaces
@@ -45,25 +45,25 @@ def main():
                 numOfSpaces = int(input("Enter number of spaces: "))
                 if direction == 'down':
                     if penToggle == 1:
-                        grid[row + numOfSpaces - 1][col ] = 1
+                        grid[row + numOfSpaces - 1][col ] = '*'
                     else:
                         MoveDown(grid, row, col, numOfSpaces)
                     row += numOfSpaces - 1
                 elif direction == 'up':
                     if penToggle == 1:
-                        grid[(row - numOfSpaces) + 1][col ] = 1
+                        grid[(row - numOfSpaces) + 1][col ] = '*'
                     else:
                         MoveUp(grid, row, col, numOfSpaces)
                     row = (row - numOfSpaces) + 1
                 elif direction == 'left':
                     if penToggle == 1:
-                        grid[row][(col - numOfSpaces) + 1] = 1
+                        grid[row][(col - numOfSpaces) + 1] = '*'
                     else:
                         MoveLeft(grid, row, col, numOfSpaces)
                     col = (col -numOfSpaces) + 1
                 elif direction == 'right':
                     if penToggle == 1:
-                        grid[row][col + numOfSpaces - 1] = 1
+                        grid[row][col + numOfSpaces - 1] = '*'
                     else:
                         MoveRight(grid, row, col, numOfSpaces)
                     col += numOfSpaces - 1
@@ -94,23 +94,23 @@ def PrintGrid(grid):
 def MoveLeft(grid, row, col, amountOfSpaces):
     #             start         stop       increment
     for j in range(col, col-amountOfSpaces, -1):
-        grid[row][j] = 1
+        grid[row][j] = '*'
 
 def MoveRight(grid, row, col, amountOfSpaces):
     #             start         stop       increment
     for j in range(col, col + amountOfSpaces, 1):
-        grid[row][j] = 1
+        grid[row][j] = '*'
 
 
 def MoveUp(grid, row, col, amountOfSpaces):
     #             start         stop       increment
     for i in range(row, row - amountOfSpaces, -1):
-        grid[i][col] = 1
+        grid[i][col] = '*'
 
 def MoveDown(grid, row, col, amountOfSpaces):
     #             start         stop       increment
     for i in range(row, row + amountOfSpaces, 1):
-        grid[i][col] = 1
+        grid[i][col] = '*'
 
 
 
